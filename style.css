@@ -31,8 +31,8 @@ padding-top: 20px;
   width: 70px;
   display: inline-block;
   text-align: center;
-margin: 0px 10px;
-border-radius: 30%
+  margin: 0px 10px;
+  border-radius: 30%
 }
 
 #black {
@@ -53,15 +53,18 @@ background-color: green;
 
 #pixel-board {
   border: 3px solid black;
-  height: 503px;
-  width: 500px;
+  height: 233px;
+  width: 230px;
   margin: auto;
   background-color: black;
+  border-radius: 2%;
 }
 
 .pixel {
+  border: 1px solid black;
   background-color: white;
   display: inline-block;
-  height: 96px;
-  width: 96px;
+  height: 40px;
+  width: 40px;
+border-radius: 10%;
 }
