@@ -21,5 +21,32 @@ top: 50%;
 #color-palette {
 border: 2px solid black;
 height: 100px;
+padding-left: 38%;
+padding-top: 20px;
 }
 
+.color {
+  border: 1px solid black;
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+margin: 0px 10px;
+border-radius: 30%
+}
+
+#black {
+background-color: black;
+}
+
+#red {
+background-color: red;
+}
+
+#blue {
+background-color: blue;
+}
+
+#green {
+background-color: green;
+}
