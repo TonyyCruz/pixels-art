@@ -50,3 +50,18 @@ background-color: blue;
 #green {
 background-color: green;
 }
+
+#pixel-board {
+  border: 3px solid black;
+  height: 503px;
+  width: 500px;
+  margin: auto;
+  background-color: black;
+}
+
+.pixel {
+  background-color: white;
+  display: inline-block;
+  height: 96px;
+  width: 96px;
+}
