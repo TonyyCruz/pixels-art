@@ -1,28 +1,25 @@
 body {
-margin:  30px;
-background-color: rgb(250, 245, 245);
+  margin:  30px;
+  background-color: rgb(250, 245, 245);
 }
 
 header {
-  /* margin-top: -30px; */
   margin: -30px;
   background-color: rgb(180, 235, 235);
   position: relative;
 }
 
 #title {
-text-align: center;
-border-top: 30px solid rgb(180, 235, 235);
-height: 100px;
-top: 50%;
-
+  text-align: center;
+  border-top: 30px solid rgb(180, 235, 235);
+  height: 100px;
+  top: 50%;
 }
 
 #color-palette {
-border: 2px solid black;
-height: 100px;
-padding-left: 38%;
-padding-top: 20px;
+  height: 100px;
+  padding-left: 38%;
+  padding-top: 20px;
 }
 
 .color {
@@ -36,19 +33,19 @@ padding-top: 20px;
 }
 
 #black {
-background-color: black;
+  background-color: black;
 }
 
 #red {
-background-color: red;
+  background-color: red;
 }
 
 #blue {
-background-color: blue;
+  background-color: blue;
 }
 
 #green {
-background-color: green;
+  background-color: green;
 }
 
 #pixel-board {
@@ -66,5 +63,5 @@ background-color: green;
   display: inline-block;
   height: 40px;
   width: 40px;
-border-radius: 10%;
+  border-radius: 10%;
 }

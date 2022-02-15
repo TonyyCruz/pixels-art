@@ -4,7 +4,6 @@ window.onload = function() {
   colorSelected = 'black';
   let painting = document.getElementById(colorSelected);
   painting.classList.add('selected');
-  console.log(painting);
 };
 let removeSelected = document.getElementsByClassName('selected');
 
@@ -44,6 +43,5 @@ let paint = document.querySelector('#pixel-board');
 paint.addEventListener('click', colorChange);
 function colorChange(event) {
   event.target.style.backgroundColor = colorSelected;
-  console.log(event.target);
 }
 
