@@ -54,7 +54,9 @@ function clearAll() {
   for (let i = 0; i < allBoxArray.length; i += 1) {
     allBoxArray[i].style.backgroundColor = 'white';
   }
-  // for (let key in allBoxArray) {
-  //   allBoxArray[key].style.backgroundColor = 'white';
-  // }
 }
+
+
+
+// let boardSize = 0;
+// while (boardSize < blockAmount)

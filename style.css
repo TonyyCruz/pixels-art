@@ -52,10 +52,31 @@ header {
   margin-bottom: 20px;
   border: 2px solid black;
   display: inline-block;
-  margin-left: 48%;
+  margin-left: 46.5%;
   padding: 10px;
   border-radius: 20%;
   font-size: large;
+  background-color: antiquewhite;
+}
+
+#board-box {
+  margin-left: 250px;
+  margin: 3px solid black;
+  height: 100px;
+  width: 350px;
+  position: relative;
+  display: inline-block;
+}
+
+#board-size {
+  margin-left: 5px;
+}
+
+#generate-board {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 20%;
   background-color: antiquewhite;
 }
 
