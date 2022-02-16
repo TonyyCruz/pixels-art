@@ -73,8 +73,8 @@ header {
 
 #board-box-flex {
   border: 2px solid black;
-  height: 250px;
-  width: 250px;
+  height: 400px;
+  width: 400px;
   margin-top: 46px;
   position: relative;
 }
@@ -106,3 +106,12 @@ header {
   width: 40px;
   border-radius: 10%;
 }
+
+/* #teste {
+  border: 2px solid rgb(5, 5, 5);
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  position: relative;
+ margin-left: 0px;
+} */

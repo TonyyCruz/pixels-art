@@ -77,7 +77,7 @@ function makeBox() {
 const boxFlexFather = document.querySelector('#board-box-flex');
 function boxDesign(boardSize) {
 let block = boxFlexFather.children;
-let blocksize = (249 - (5 * boardSize)) / boardSize;
+let blocksize = (399 - (2 * boardSize)) / boardSize;
 console.log(boardSize);
 console.log(blocksize);
   for (let i = 0; i < block.length; i += 1) {
@@ -86,6 +86,7 @@ console.log(blocksize);
     block[i].style.width = `${blocksize}px`;
     block[i].style.backgroundColor = 'white';
     block[i].style.display = 'inline-block';
-    block[i].style.margin = '0px 2px';
+    // block[i].style.marginTop = `-10%`;
+    
   }
 }
