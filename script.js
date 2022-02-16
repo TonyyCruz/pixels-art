@@ -56,7 +56,36 @@ function clearAll() {
   }
 }
 
+// let boardSize = document.querySelector('#board-size').value;
+const boxFlex = document.querySelector('#board-box-flex');
+const generateBoard = document.querySelector('#generate-board');
+generateBoard.addEventListener('click', makeBox)
 
-
-// let boardSize = 0;
-// while (boardSize < blockAmount)
+function makeBox() {
+  let boardSize = document.querySelector('#board-size').value;
+  if (boardSize === '' || boardSize < 5 || boardSize > 50) {
+    window.alert('Board inválido!');
+  } else {
+    for (let i = 0; i < (boardSize ** 2); i += 1) {
+      let block = document.createElement('div');
+      block.classList.add('block');
+      boxFlex.appendChild(block);
+    }
+    boxDesign(boardSize);
+  }
+}
+const boxFlexFather = document.querySelector('#board-box-flex');
+function boxDesign(boardSize) {
+let block = boxFlexFather.children;
+let blocksize = (249 - (5 * boardSize)) / boardSize;
+console.log(boardSize);
+console.log(blocksize);
+  for (let i = 0; i < block.length; i += 1) {
+    block[i].style.border = '1px solid black';
+    block[i].style.height = `${blocksize}px`;
+    block[i].style.width = `${blocksize}px`;
+    block[i].style.backgroundColor = 'white';
+    block[i].style.display = 'inline-block';
+    block[i].style.margin = '0px 2px';
+  }
+}

@@ -18,7 +18,7 @@ header {
 
 #color-palette {
   height: 100px;
-  padding-left: 38%;
+  padding-left: 36.8%;
   padding-top: 20px;
 }
 
@@ -27,7 +27,6 @@ header {
   height: 70px;
   width: 70px;
   display: inline-block;
-  text-align: center;
   margin: 0px 10px;
   border-radius: 30%
 }
@@ -59,7 +58,7 @@ header {
   background-color: antiquewhite;
 }
 
-#board-box {
+#board-contain{
   margin-left: 250px;
   margin: 3px solid black;
   height: 100px;
@@ -70,6 +69,14 @@ header {
 
 #board-size {
   margin-left: 5px;
+}
+
+#board-box-flex {
+  border: 2px solid black;
+  height: 250px;
+  width: 250px;
+  margin-top: 46px;
+  position: relative;
 }
 
 #generate-board {
@@ -84,7 +91,9 @@ header {
   border: 3px solid black;
   height: 230px;
   width: 230px;
-  margin: auto;
+  margin-left: 585.2px;
+  /* margin: auto; */
+  display: inline-block;
   background-color: rgb(32, 32, 32);
   border-radius: 2%;
 }
