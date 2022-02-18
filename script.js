@@ -100,6 +100,7 @@ function inputCheque() {
   } if (boardSize > 50) {
     boardSize = 50;
   }
+  document.querySelector('#board-size').value = boardSize;
 }
 
 // apaga todos os blocos <===
@@ -139,6 +140,7 @@ function blockAdjust() {
     paint.children[i].style.borderRadius = '10%';
     paint.children[i].style.marginRight = '4px';
   }
+  paint.style.backgroundColor = 'white';
 }
 
 // ajusta o tamanho do box(container de blocos) maior que 30 <===
