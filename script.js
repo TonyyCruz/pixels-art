@@ -155,11 +155,23 @@ function boxAdjustHightNumber() {
   paint.style.width = `${boxWidth}px`;
 }
 
-// ajusta o tamanho do box(container de blocos) até 30 <===
+function boxAdjustMidNumber() {
+  let boxHeight = boardSize * blockHeight + (6.5 * boardSize + (boardSize / 2));
+  let boxWidth = boardSize * blockHeight + (6 * boardSize);
+  console.log(boardSize);
+  console.log(blockHeight);
+  paint.style.height = `${boxHeight}px`;
+  paint.style.width = `${boxWidth}px`;
+}
+
+// ajusta o tamanho do box(container de blocos) até 15 <===
 function boxAdjust() {
   if (boardSize > 30) {
     boxAdjustHightNumber();
-  } else {
+  } else if (boardSize > 15 && boardSize <= 30) {
+    boxAdjustMidNumber();
+  }
+  else {
     let boxHeight = boardSize * blockHeight + (6 * boardSize + (boardSize / 2));
     let boxWidth = boardSize * blockHeight + (6 * boardSize);
     console.log(boardSize);
