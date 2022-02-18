@@ -59,7 +59,7 @@ header {
 }
 
 #board-contain{
-  margin-left: 250px;
+  margin-left: 10px;
   margin: 3px solid black;
   height: 100px;
   width: 350px;
@@ -69,14 +69,6 @@ header {
 
 #board-size {
   margin-left: 5px;
-}
-
-#board-box-flex {
-  border: 2px solid black;
-  height: 400px;
-  width: 400px;
-  margin-top: 46px;
-  position: relative;
 }
 
 #generate-board {
@@ -92,8 +84,7 @@ header {
   height: 230px;
   width: 230px;
   margin-left: 585.2px;
-  /* margin: auto; */
-  display: inline-block;
+  margin: auto;
   background-color: rgb(32, 32, 32);
   border-radius: 2%;
 }
@@ -106,12 +97,3 @@ header {
   width: 40px;
   border-radius: 10%;
 }
-
-/* #teste {
-  border: 2px solid rgb(5, 5, 5);
-  height: 100px;
-  width: 100px;
-  display: inline-block;
-  position: relative;
- margin-left: 0px;
-} */
