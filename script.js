@@ -6,7 +6,22 @@ window.onload = function () {
   colorSelected = 'black';
   const painting = document.getElementById(colorSelected);
   painting.classList.add('selected');
+  corRandom1 = generateArandomColor();
+  corRandom2 = generateArandomColor();
+  corRandom3 = generateArandomColor();
+  colorSwap();
+  colorBlack()
 };
+function colorSwap() {
+  colorRed();
+  colorBlue();
+  colorGreen();
+}
+
+//cores aleatorias <===
+let corRandom1;
+let corRandom2;
+let corRandom3;
 
 //aponta salva quem esta com a classe 'selected', que sera a cor usada <===
 const removeSelected = document.getElementsByClassName('selected');
@@ -27,7 +42,9 @@ blackSelected.addEventListener('click', colorBlack);
 function colorRed() {
   removeSelected[0].classList.remove('selected');
   redSelected.classList.add('selected');
-  colorSelected = 'red';
+  redSelected.style.backgroundColor = 'white';
+  colorSelected = corRandom1;
+  redSelected.style.backgroundColor = colorSelected;
 }
 
 //seleciona a cor como vermelho <===
@@ -35,26 +52,30 @@ const redSelected = document.querySelector('#red');
 redSelected.addEventListener('click', colorRed);
 
 //define a cor como azul <===
-function colorblue() {
+function colorBlue() {
   removeSelected[0].classList.remove('selected');
   blueSelected.classList.add('selected');
-  colorSelected = 'blue';
+  blueSelected.style.backgroundColor = 'white';
+  colorSelected = corRandom2;
+  blueSelected.style.backgroundColor = colorSelected;
 }
 
 //seleciona a cor azul <===
 const blueSelected = document.querySelector('#blue');
-blueSelected.addEventListener('click', colorblue);
+blueSelected.addEventListener('click', colorBlue);
 
-//define a cor como verde
-function colorgreen() {
+//define a cor como verde <===
+function colorGreen() {
   removeSelected[0].classList.remove('selected');
   greenSelected.classList.add('selected');
-  colorSelected = 'green';
+  greenSelected.style.backgroundColor = 'white';
+  colorSelected = corRandom3;
+  greenSelected.style.backgroundColor = colorSelected;
 }
 
 //seleciona a cor verde <===
 const greenSelected = document.querySelector('#green');
-greenSelected.addEventListener('click', colorgreen);
+greenSelected.addEventListener('click', colorGreen);
 
 //pinta os blocos com a cor selecionada<===
 const paint = document.querySelector('#pixel-board');
@@ -140,11 +161,15 @@ function boxAdjust() {
 
 //verifica se o valor input é valido <===
 function inputCheque() {
-  if (boardSize === '') {
-    window.alert('')
+  if (boardSize === 0) {
+    window.alert('Board inválido!')
   }
+  if (boardSize < 5) { boardSize = 5 }
+  if (boardSize > 50) { boardSize = 50 }
+  document.querySelector('#board-size').value = boardSize;
 }
 
+//controlador de funçoes do gerador de box <===
 function generateBox() {
 boardSize = Number(document.querySelector('#board-size').value);
 inputCheque();
@@ -158,4 +183,12 @@ inputCheque();
 //chama a funçao para gerar o quadro com o input number <===
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', generateBox);
+
+//gera uma cor aleatoria <===
+function generateArandomColor() {
+  let randomColor = Math.floor(Math.random() *1000);
+  if (randomColor < 10) { randomColor *= 100}
+  if (randomColor < 100) {randomColor *= 10}
+  return `#${randomColor}`
+}
 
