@@ -97,10 +97,11 @@ let blockHeight = 0;
 // verifica se o valor input é valido <===
 function inputCheque() {
   if (boardSize === 0) {
-    window.alert('Board inválido!')
+    window.alert('Board inválido!');
   }
   if (boardSize < 5) { boardSize = 5 }
   if (boardSize > 50) { boardSize = 50 }
+  document.querySelector('#board-size').value = boardSize;
 }
 
 // apaga todos os blocos <===
@@ -136,18 +137,18 @@ function blockAdjust() {
     paint.children[i].style.width = `${blockHeight}px`;
     paint.children[i].style.display = 'inline-block';
     paint.children[i].style.backgroundColor = 'white';
-    paint.children[i].style.border = '1px solid black'
-    paint.children[i].style.borderRadius = '10%'
+    paint.children[i].style.border = '1px solid black';
+    paint.children[i].style.borderRadius = '10%';
     paint.children[i].style.marginRight = '4px';
   }
 }
 
 // ajusta o tamanho do box(container de blocos) maior que 30 <===
 function boxAdjustHightNumber() {
-  let boxHeight = boardSize * blockHeight + (100 * boardSize + (boardSize / 2));
+  let boxHeight = boardSize * blockHeight + (12.5 * boardSize + (boardSize / 2));
   let boxWidth = boardSize * blockHeight + (6 * boardSize);
   console.log(boardSize);
-  console.log(blockHeight);
+  console.log(boxHeight);
   paint.style.height = `${boxHeight}px`;
   paint.style.width = `${boxWidth}px`;
 }
@@ -159,8 +160,6 @@ function boxAdjust() {
   } else {
     let boxHeight = boardSize * blockHeight + (6 * boardSize + (boardSize / 2));
     let boxWidth = boardSize * blockHeight + (6 * boardSize);
-    console.log(boardSize);
-    console.log(blockHeight);
     paint.style.height = `${boxHeight}px`;
     paint.style.width = `${boxWidth}px`;
   }
