@@ -5,14 +5,11 @@ let colorSelected = '';
 let corRandom1;
 let corRandom2;
 let corRandom3;
-function corRandomGenerate() {
-  corRandom1 = generateArandomColor();
-  corRandom2 = generateArandomColor();
-  corRandom3 = generateArandomColor();
-}
+
 // aponta salva quem esta com a classe 'selected', que sera a cor usada <===
 const removeSelected = document.getElementsByClassName('selected');
 
+const blackSelected = document.querySelector('#black');
 // define a cor como preto <===
 function colorBlack() {
   removeSelected[0].classList.remove('selected');
@@ -20,9 +17,9 @@ function colorBlack() {
   blackSelected.classList.add('selected');
 }
 // seleciona a cor como preto <===
-const blackSelected = document.querySelector('#black');
 blackSelected.addEventListener('click', colorBlack);
 
+const redSelected = document.querySelector('#red');
 /* 
 definia a cor como vermelho <===
 passou a ser random
@@ -35,9 +32,9 @@ function colorRed() {
   redSelected.style.backgroundColor = colorSelected;
 }
 // seleciona a cor como vermelha / random<===
-const redSelected = document.querySelector('#red');
 redSelected.addEventListener('click', colorRed);
 
+const blueSelected = document.querySelector('#blue');
 /* 
 definia a cor como azul <===
 passou a ser random
@@ -50,9 +47,9 @@ function colorBlue() {
   blueSelected.style.backgroundColor = colorSelected;
 }
 // seleciona a cor azul/random <===
-const blueSelected = document.querySelector('#blue');
 blueSelected.addEventListener('click', colorBlue);
 
+const greenSelected = document.querySelector('#green');
 /* 
 definia a cor como verde <===
 passou a ser random
@@ -66,7 +63,6 @@ function colorGreen() {
 }
 
 // seleciona a cor verde/random <===
-const greenSelected = document.querySelector('#green');
 greenSelected.addEventListener('click', colorGreen);
 
 // pinta os blocos com a cor selecionada<===
@@ -96,7 +92,7 @@ let blockHeight = 0;
 
 // verifica se o valor input é valido <===
 function inputCheque() {
-  if (boardSize === 0) {
+  if (boardSize <= 0) {
     window.alert('Board inválido!');
   }
   if (boardSize < 5) {
@@ -108,7 +104,7 @@ function inputCheque() {
 
 // apaga todos os blocos <===
 function clearBox() {
-  let dellPixel = allBoxArray.length;
+  const dellPixel = allBoxArray.length;
   for (let i = 0; i < dellPixel; i += 1) {
     paint.removeChild(allBoxArray[0]);
   }
@@ -127,7 +123,7 @@ function addBlockBox() {
 // adiciona os blocos <===
 function addblockToBox() {
   for (let i = 0; i < (boardSize ** 2); i += 1) {
-    let block = document.createElement('div');
+    const block = document.createElement('div');
     paint.appendChild(block);
   }
 }
@@ -147,19 +143,15 @@ function blockAdjust() {
 
 // ajusta o tamanho do box(container de blocos) maior que 30 <===
 function boxAdjustHightNumber() {
-  let boxHeight = boardSize * blockHeight + (12.5 * boardSize + (boardSize / 2));
-  let boxWidth = boardSize * blockHeight + (6 * boardSize);
-  console.log(boardSize);
-  console.log(blockHeight);
+  const boxHeight = boardSize * blockHeight + (12.5 * boardSize + (boardSize / 2));
+  const boxWidth = boardSize * blockHeight + (6 * boardSize);
   paint.style.height = `${boxHeight}px`;
   paint.style.width = `${boxWidth}px`;
 }
 
 function boxAdjustMidNumber() {
-  let boxHeight = boardSize * blockHeight + (6.5 * boardSize + (boardSize / 2));
-  let boxWidth = boardSize * blockHeight + (6 * boardSize);
-  console.log(boardSize);
-  console.log(blockHeight);
+  const boxHeight = boardSize * blockHeight + (6.5 * boardSize + (boardSize / 2));
+  const boxWidth = boardSize * blockHeight + (6 * boardSize);
   paint.style.height = `${boxHeight}px`;
   paint.style.width = `${boxWidth}px`;
 }
@@ -170,12 +162,9 @@ function boxAdjust() {
     boxAdjustHightNumber();
   } else if (boardSize > 15 && boardSize <= 30) {
     boxAdjustMidNumber();
-  }
-  else {
-    let boxHeight = boardSize * blockHeight + (6 * boardSize + (boardSize / 2));
-    let boxWidth = boardSize * blockHeight + (6 * boardSize);
-    console.log(boardSize);
-    console.log(blockHeight);
+  } else {
+    const boxHeight = boardSize * blockHeight + (6 * boardSize + (boardSize / 2));
+    const boxWidth = boardSize * blockHeight + (6 * boardSize);
     paint.style.height = `${boxHeight}px`;
     paint.style.width = `${boxWidth}px`;
   }
@@ -204,6 +193,12 @@ function generateArandomColor() {
     randomColor *= 10;
   }
   return `#${randomColor}`;
+}
+
+function corRandomGenerate() {
+  corRandom1 = generateArandomColor();
+  corRandom2 = generateArandomColor();
+  corRandom3 = generateArandomColor();
 }
 
 // funçoes de cores aleatorias <===
