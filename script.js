@@ -1,6 +1,7 @@
 // salva a cor selecionada <===
 let colorSelected = '';
 
+<<<<<<< HEAD
 // cores aleatorias <===
 let corRandom1;
 let corRandom2;
@@ -11,6 +12,31 @@ function rorRandomGenerate() {
   corRandom3 = generateArandomColor();
 }
 // aponta salva quem esta com a classe 'selected', que sera a cor usada <===
+
+//quando carrega a pagina define a cor selecionada como preto <===
+window.onload = function () {
+  colorSelected = 'black';
+  const painting = document.getElementById(colorSelected);
+  painting.classList.add('selected');
+  corRandom1 = generateArandomColor();
+  corRandom2 = generateArandomColor();
+  corRandom3 = generateArandomColor();
+  colorSwap();
+  colorBlack()
+};
+function colorSwap() {
+  colorRed();
+  colorBlue();
+  colorGreen();
+}
+
+//cores aleatorias <===
+let corRandom1;
+let corRandom2;
+let corRandom3;
+
+//aponta salva quem esta com a classe 'selected', que sera a cor usada <===
+
 const removeSelected = document.getElementsByClassName('selected');
 
 // define a cor como preto <===
@@ -38,11 +64,14 @@ function colorRed() {
 const redSelected = document.querySelector('#red');
 redSelected.addEventListener('click', colorRed);
 
+
 /* 
 definia a cor como azul <===
 passou a ser random
  */
-function colorBlue() {
+
+//define a cor como azul <===
+
   removeSelected[0].classList.remove('selected');
   blueSelected.classList.add('selected');
   blueSelected.style.backgroundColor = 'white';
@@ -53,10 +82,14 @@ function colorBlue() {
 const blueSelected = document.querySelector('#blue');
 blueSelected.addEventListener('click', colorBlue);
 
+
 /* 
 define a cor como verde <===
 passou a ser random
  */
+
+//define a cor como verde <===
+
 function colorGreen() {
   removeSelected[0].classList.remove('selected');
   greenSelected.classList.add('selected');
@@ -160,12 +193,30 @@ function boxAdjust() {
   } else {
     let boxHeight = boardSize * blockHeight + (6 * boardSize + (boardSize / 2));
     let boxWidth = boardSize * blockHeight + (6 * boardSize);
+
     paint.style.height = `${boxHeight}px`;
     paint.style.width = `${boxWidth}px`;
+
+    paint.style.height = `${boxHeight}px`
+    paint.style.width = `${boxWidth}px`
   }
 }
 
+//verifica se o valor input é valido <===
+function inputCheque() {
+  if (boardSize === 0) {
+    window.alert('Board inválido!')
+
+  }
+  if (boardSize < 5) { boardSize = 5 }
+  if (boardSize > 50) { boardSize = 50 }
+  document.querySelector('#board-size').value = boardSize;
+}
+
 // controlador de funçoes do gerador de box <===
+
+//controlador de funçoes do gerador de box <===
+
 function generateBox() {
   boardSize = Number(document.querySelector('#board-size').value);
   inputCheque();
@@ -203,3 +254,12 @@ window.onload = function () {
   rorRandomGenerate();
   colorSwap();
 };
+
+//gera uma cor aleatoria <===
+function generateArandomColor() {
+  let randomColor = Math.floor(Math.random() *1000);
+  if (randomColor < 10) { randomColor *= 100}
+  if (randomColor < 100) {randomColor *= 10}
+  return `#${randomColor}`
+}
+
