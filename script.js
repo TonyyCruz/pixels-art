@@ -1,42 +1,16 @@
 // salva a cor selecionada <===
 let colorSelected = '';
 
-<<<<<<< HEAD
 // cores aleatorias <===
 let corRandom1;
 let corRandom2;
 let corRandom3;
-function rorRandomGenerate() {
+function corRandomGenerate() {
   corRandom1 = generateArandomColor();
   corRandom2 = generateArandomColor();
   corRandom3 = generateArandomColor();
 }
 // aponta salva quem esta com a classe 'selected', que sera a cor usada <===
-
-//quando carrega a pagina define a cor selecionada como preto <===
-window.onload = function () {
-  colorSelected = 'black';
-  const painting = document.getElementById(colorSelected);
-  painting.classList.add('selected');
-  corRandom1 = generateArandomColor();
-  corRandom2 = generateArandomColor();
-  corRandom3 = generateArandomColor();
-  colorSwap();
-  colorBlack()
-};
-function colorSwap() {
-  colorRed();
-  colorBlue();
-  colorGreen();
-}
-
-//cores aleatorias <===
-let corRandom1;
-let corRandom2;
-let corRandom3;
-
-//aponta salva quem esta com a classe 'selected', que sera a cor usada <===
-
 const removeSelected = document.getElementsByClassName('selected');
 
 // define a cor como preto <===
@@ -64,32 +38,25 @@ function colorRed() {
 const redSelected = document.querySelector('#red');
 redSelected.addEventListener('click', colorRed);
 
-
 /* 
 definia a cor como azul <===
 passou a ser random
  */
-
-//define a cor como azul <===
-
+function colorBlue() {
   removeSelected[0].classList.remove('selected');
   blueSelected.classList.add('selected');
   blueSelected.style.backgroundColor = 'white';
   colorSelected = corRandom2;
   blueSelected.style.backgroundColor = colorSelected;
 }
-//seleciona a cor azul/random <===
+// seleciona a cor azul/random <===
 const blueSelected = document.querySelector('#blue');
 blueSelected.addEventListener('click', colorBlue);
 
-
 /* 
-define a cor como verde <===
+definia a cor como verde <===
 passou a ser random
  */
-
-//define a cor como verde <===
-
 function colorGreen() {
   removeSelected[0].classList.remove('selected');
   greenSelected.classList.add('selected');
@@ -132,26 +99,28 @@ function inputCheque() {
   if (boardSize === 0) {
     window.alert('Board inválido!');
   }
-  if (boardSize < 5) { boardSize = 5 }
-  if (boardSize > 50) { boardSize = 50 }
-  document.querySelector('#board-size').value = boardSize;
+  if (boardSize < 5) {
+    boardSize = 5;
+  } if (boardSize > 50) {
+    boardSize = 50;
+  }
 }
 
 // apaga todos os blocos <===
-function  clearBox() {
+function clearBox() {
   let dellPixel = allBoxArray.length;
   for (let i = 0; i < dellPixel; i += 1) {
-    paint.removeChild(allBoxArray[0])
+    paint.removeChild(allBoxArray[0]);
   }
 }
 
 // define o tamanho dos blocos <===
 function addBlockBox() {
   if (boardSize <= 15) {
-    blockHeight = 40; }
-  else if ( boardSize > 15 && boardSize <= 30) {
-    blockHeight = 25; }
-  else {
+    blockHeight = 40;
+  } else if (boardSize > 15 && boardSize <= 30) {
+    blockHeight = 25;
+  } else {
     blockHeight = 10;
   }
 }
@@ -181,7 +150,7 @@ function boxAdjustHightNumber() {
   let boxHeight = boardSize * blockHeight + (12.5 * boardSize + (boardSize / 2));
   let boxWidth = boardSize * blockHeight + (6 * boardSize);
   console.log(boardSize);
-  console.log(boxHeight);
+  console.log(blockHeight);
   paint.style.height = `${boxHeight}px`;
   paint.style.width = `${boxWidth}px`;
 }
@@ -193,30 +162,14 @@ function boxAdjust() {
   } else {
     let boxHeight = boardSize * blockHeight + (6 * boardSize + (boardSize / 2));
     let boxWidth = boardSize * blockHeight + (6 * boardSize);
-
+    console.log(boardSize);
+    console.log(blockHeight);
     paint.style.height = `${boxHeight}px`;
     paint.style.width = `${boxWidth}px`;
-
-    paint.style.height = `${boxHeight}px`
-    paint.style.width = `${boxWidth}px`
   }
-}
-
-//verifica se o valor input é valido <===
-function inputCheque() {
-  if (boardSize === 0) {
-    window.alert('Board inválido!')
-
-  }
-  if (boardSize < 5) { boardSize = 5 }
-  if (boardSize > 50) { boardSize = 50 }
-  document.querySelector('#board-size').value = boardSize;
 }
 
 // controlador de funçoes do gerador de box <===
-
-//controlador de funçoes do gerador de box <===
-
 function generateBox() {
   boardSize = Number(document.querySelector('#board-size').value);
   inputCheque();
@@ -235,7 +188,9 @@ generateBoard.addEventListener('click', generateBox);
 function generateArandomColor() {
   let randomColor = Math.floor(Math.random() * 1000);
   if (randomColor < 10) { randomColor *= 100; }
-  if (randomColor < 100) {randomColor *= 10; }
+  if (randomColor < 100) {
+    randomColor *= 10;
+  }
   return `#${randomColor}`;
 }
 
@@ -251,15 +206,6 @@ window.onload = function () {
   colorSelected = 'black';
   const painting = document.getElementById(colorSelected);
   painting.classList.add('selected');
-  rorRandomGenerate();
+  corRandomGenerate();
   colorSwap();
 };
-
-//gera uma cor aleatoria <===
-function generateArandomColor() {
-  let randomColor = Math.floor(Math.random() *1000);
-  if (randomColor < 10) { randomColor *= 100}
-  if (randomColor < 100) {randomColor *= 10}
-  return `#${randomColor}`
-}
-
