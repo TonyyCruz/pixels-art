@@ -141,7 +141,7 @@ function blockAdjust() {
     paint.children[i].style.borderRadius = '10%';
     paint.children[i].style.marginRight = '4px';
   }
-  paint.style.backgroundColor = 'white'; // pinta o fundo da tabela de branco apos colocar um valor input<===
+  // paint.style.backgroundColor = 'white'; pinta o fundo da tabela de branco apos colocar um valor input<===
 }
 
 // ajusta o tamanho do box(container de blocos) maior que 30 <===
