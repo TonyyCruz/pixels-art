@@ -125,6 +125,7 @@ function addBlockBox() {
 function addblockToBox() {
   for (let i = 0; i < (boardSize ** 2); i += 1) {
     const block = document.createElement('div');
+    block.classList.add('pixel');
     paint.appendChild(block);
   }
 }
@@ -140,7 +141,7 @@ function blockAdjust() {
     paint.children[i].style.borderRadius = '10%';
     paint.children[i].style.marginRight = '4px';
   }
-  paint.style.backgroundColor = 'white';
+  paint.style.backgroundColor = 'white'; // pinta o fundo da tabela de branco apos colocar um valor input<===
 }
 
 // ajusta o tamanho do box(container de blocos) maior que 30 <===
@@ -151,6 +152,7 @@ function boxAdjustHightNumber() {
   paint.style.width = `${boxWidth}px`;
 }
 
+// ajusta o tamanho do box (container de blocos) entre 15 e 30 <===
 function boxAdjustMidNumber() {
   const boxHeight = boardSize * blockHeight + (6.5 * boardSize + (boardSize / 2));
   const boxWidth = boardSize * blockHeight + (6 * boardSize);
